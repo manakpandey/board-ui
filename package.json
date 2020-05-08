@@ -4,7 +4,7 @@
   "main": "lib/index.js",
   "module": "src/index.tsx",
   "types": "lib/index.d.ts",
-  "repository": "https://git.gmetri.io/gmetrixr/board-ui",
+  "repository": "https://github.com/gmetrixr/board-ui",
   "author": "GMetri <admin@gmetri.com>",
   "license": "MIT",
   "scripts": {
