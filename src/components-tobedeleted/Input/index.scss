@@ -1,0 +1,64 @@
+@import '../../scss/variables';
+
+.board_ui {
+
+  &__input_wrapper {
+    display: block;
+    display: flex;
+    flex-flow: column;
+  }
+
+  &__input_container {
+    position: relative;
+    display: flex;
+  }
+
+  &__input {
+    @extend %boxShadowInset;
+    @extend %b20l;
+
+    background-color: $background;
+    border: unset;
+    width: 100%;
+    border-radius: 4px;
+    padding: 16px 20px;
+    transition: all 0.2s ease-in-out;
+
+    &:focus {
+      outline: none;
+      box-shadow: 5px 5px 10px $white, inset 5px 5px 10px rgba(24, 86, 180, 0.2);
+    }
+
+    &::placeholder {
+      @extend %b20l;
+
+      color: $placeholder;
+    }
+
+    &__padding_right {
+      padding: 16px 80px 16px 20px;
+    }
+
+    &__label {
+      @extend %b20l;
+
+      color: $label;
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+
+    &__btn {
+      position: absolute;
+      right: 13px;
+      top: 13px;
+    }
+
+    &__info {
+      @extend %b14r;
+
+      color: $infoText;
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+  }
+}

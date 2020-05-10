@@ -1,0 +1,49 @@
+@import '../../scss/variables';
+
+.board_ui {
+
+  &__radio {
+    display: inline-block;
+
+    &__label {
+      display: flex;
+      box-shadow: 5px 5px 10px rgba(24, 86, 180, 0.2), -5px -5px 10px #fff;
+      background: $background;
+      border: unset;
+      cursor: pointer;
+      border-radius: 4px;
+      padding: 12px;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        transform: translateY(-1px);
+      }
+
+      &__name {
+        font-family: Poppins, sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        color: #999;
+        margin-top: 16px;
+        text-align: center;
+
+        &_active {
+          color: #666;
+        }
+      }
+
+      &_active {
+        box-shadow: 4px 4px 8px #fff, inset 4px 4px 10px rgba(24, 86, 180, 0.1);
+
+        & path:last-of-type {
+          stroke: #5790ff;
+        }
+
+        & path:first-of-type {
+          fill: #5790ff;
+          stroke: unset;
+        }
+      }
+    }
+  }
+}

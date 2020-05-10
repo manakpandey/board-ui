@@ -1,0 +1,40 @@
+// colors
+$black: #000;
+$white: #fff;
+$background: #f1f3f6;
+$subHeading: #474747;
+$label: #5790ff;
+$infoText: #999;
+$placeholder: #ccc;
+
+%boxShadow {
+  box-shadow: 10px 10px 40px 0 rgba(24, 86, 180, 0.2), -10px -10px 20px 0 $white;
+}
+
+%boxShadowInset {
+  box-shadow: 5px 5px 10px $white, inset 5px 5px 10px rgba(24, 86, 180, 0.1);
+}
+
+%f20-b300 {
+  font-family: Poppins, sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+%f20-b700 {
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+%f14-b300 {
+  font-family: Poppins, sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+%f14-b400 {
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}

@@ -1,0 +1,48 @@
+@import '../../scss/variables';
+
+.build_ui {
+
+  &__bg {
+    background-image: url('../../SvgIcons/BG.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+  }
+
+  &__fullscreen {
+    background-color: $background;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+  }
+
+  &__block {
+    box-shadow: 10px 10px 40px rgba(24, 86, 180, 0.2), -10px -10px 20px #fff;
+    background-color: $background;
+    max-width: 633px;
+    padding: 60px 90px;
+    height: 92%;
+    max-height: 688px;
+    float: right;
+    border-radius: 20px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 40px;
+
+    @media only screen and (max-width: 1480px) {
+      max-width: 580px;
+      padding: 50px 75px;
+    }
+
+    &_small {
+      max-height: unset;
+      max-width: 358px;
+      padding: 100px 30px 42px 24px;
+    }
+  }
+}

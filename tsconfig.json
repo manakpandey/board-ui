@@ -16,8 +16,14 @@
     "esModuleInterop": true,
     // allow jsx syntax
     "jsx": "preserve",
-    "rootDirs": ["src", "packages"]
+    "rootDirs": [
+      "stories",
+      "src"
+    ]
   },
-  "include": ["src/**/*", "packages/**/*"],
-  "exclude": ["build"]
+  "include": [
+    "stories/**/*",
+    "src/**/*"
+  ],
+  "exclude": ["lib"]
 }

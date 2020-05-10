@@ -1,0 +1,67 @@
+@import './variables';
+
+.body_font {
+  font-family: Poppins, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.box_shadow {
+
+  &__offset {
+    @extend %boxShadow;
+  }
+
+  &__inset {
+    @extend %boxShadowInset;
+  }
+}
+
+.h36 {
+  font-family: Poppins, sans-serif;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 54px;
+}
+
+.f20-b300 {
+  @extend %f20-b300;
+}
+
+.f20-b700 {
+  @extend %f20-b700;
+}
+
+.f14-b300 {
+  @extend %f14-b300;
+}
+
+.f14-b400 {
+  @extend %f14-b400;
+}
+
+.ml-20 {
+  margin-left: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.primary {
+  color: $label;
+}
+
+.mb-60 {
+  margin-bottom: 60px;
+}
+
+.mb-160 {
+  margin-bottom: 160px;
+}
