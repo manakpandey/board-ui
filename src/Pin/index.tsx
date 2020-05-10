@@ -1,16 +1,10 @@
 import React from 'react';
+import { IPin } from '../Models';
 
-export interface PinProps {
-  id: number | string;
-  body: string;
-  color?: string;
-  pitch?: number;
-  yaw?: number;
-}
 
 interface Props {
-  onChange: (p : PinProps) => void,
-  pinProps: PinProps,
+  onChange: (p : IPin) => void,
+  pinProps: IPin,
   onDelete: (id: number | string) => void
 }
 

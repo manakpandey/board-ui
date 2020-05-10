@@ -1,16 +1,16 @@
 import { storiesOf } from '@storybook/react';
 import React, { useState } from 'react';
-import { Board, BoardProps } from '../../src/Board';
+import { Board } from '../../src/Board';
 import '../../src/Board/index.scss';
 //@ts-ignore
 import ButtonReadme from '../../src/Board/README.md';
-import { PinProps } from '../../src/Pin';
+import { IPin, IBoard } from '../../src/Models';
 import '../../src/Pin/index.scss';
 import '../../src/scss/_flex_helpers.scss';
 
 
 function BoardController() {
-  const [board, setBoard] = useState<BoardProps>({
+  const [board, setBoard] = useState<IBoard>({
     id: 'tech',
     pins: {
       1: { id: 1, body: 'hi there', pitch: 123, yaw: 123 },
@@ -45,7 +45,7 @@ function BoardController() {
     },
   });
 
-  function updatePin(p: PinProps){
+  function updatePin(p: IPin){
     board.pins[p.id] = p;
     const new_board = { ...board };
     setBoard(new_board);
