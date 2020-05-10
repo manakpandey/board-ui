@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/react';
 import React, { useState } from 'react';
 import '../../src/components-tobedeleted/Button/index.scss';
 import Radio from '../../src/components-tobedeleted/Radio';
-import '../../src/components-tobedeleted/Radio/index.scss';
+// import '../../src/components-tobedeleted/Radio/index.scss';
 import Audio from '../../src/SvgIcons/Audio';
 import Image from '../../src/SvgIcons/Image';
 import OtherMedia from '../../src/SvgIcons/OtherMedia';
@@ -59,7 +59,7 @@ const data = [
 ];
 
 function ButtonController() {
-  const [selected, setSelected] = useState('2');
+  const [selected, setSelected] = useState('text');
   const [selected2, setSelected2] = useState('Office');
 
   function onChange(value: string) {
