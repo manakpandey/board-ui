@@ -10,32 +10,31 @@ import Text from '../../src/SvgIcons/Text';
 import '../../src/scss/index.scss';
 import './styles.scss';
 
-
 const data2 = [
   {
     value: 'Bistro',
     label: 'Bistro',
-    content: <img src="https://cdn-minio.vrgmetri.com/cdn-web.vrgmetri.com/board-ui/Office.png" />,
+    content: <img src="https://cdn-minio.vrgmetri.com/cdn-web.vrgmetri.com/board-ui/Office.svg" />,
   },
   {
     value: 'Office',
     label: 'Office',
-    content: <img src="https://cdn-minio.vrgmetri.com/cdn-web.vrgmetri.com/board-ui/Meadows.png" />,
+    content: <img src="https://cdn-minio.vrgmetri.com/cdn-web.vrgmetri.com/board-ui/Meadows.svg" />,
   },
   {
     value: 'Bedroom',
     label: 'Bedroom',
-    content: <img src="https://cdn-minio.vrgmetri.com/cdn-web.vrgmetri.com/board-ui/Lakeside.png" />,
+    content: <img src="https://cdn-minio.vrgmetri.com/cdn-web.vrgmetri.com/board-ui/Lakeside.svg" />,
   },
   {
     value: 'Lakeside',
     label: 'Lakeside',
-    content: <img src="https://cdn-minio.vrgmetri.com/cdn-web.vrgmetri.com/board-ui/Bistro.png" />,
+    content: <img src="https://cdn-minio.vrgmetri.com/cdn-web.vrgmetri.com/board-ui/Bistro.svg" />,
   },
   {
     value: 'Meadows',
     label: 'Meadows',
-    content: <img src="https://cdn-minio.vrgmetri.com/cdn-web.vrgmetri.com/board-ui/Bedroom.png" />,
+    content: <img src="https://cdn-minio.vrgmetri.com/cdn-web.vrgmetri.com/board-ui/Bedroom.svg" />,
   },
 ];
 

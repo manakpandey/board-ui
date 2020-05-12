@@ -5,7 +5,7 @@ import '../../src/Board/index.scss';
 //@ts-ignore
 import ButtonReadme from '../../src/Board/README.md';
 import { IPin, IBoard } from '../../src/Models';
-import '../../src/Pin/index.scss';
+import '../../src/PinArchive/index.scss';
 import '../../src/scss/_flex_helpers.scss';
 
 

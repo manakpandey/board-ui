@@ -1,0 +1,69 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // opacity: 0.75;
+  background-color: #ddd;
+}
+
+.pin_editor {
+  width: 900px;
+  margin: 0 auto;
+  color: #000;
+  background-color: #fff;
+  font-family: "Montserrat", sans-serif;
+  padding-bottom: 10px;
+  border: 1px dashed #c8c8c8;
+  margin-bottom: 20px;
+
+  &__title {
+    position: relative;
+
+    & textarea {
+      font-size: 60px;
+      line-height: 90px;
+      font-weight: 700;
+      border: none;
+      resize: none;
+      width: 100%;
+      box-sizing: border-box;
+      background-image: linear-gradient(120deg, #edff20 0%, #edff20 100%);
+      background-size: 95% 35px;
+      background-position: 0 88%;
+      transition: background-size 0.25s ease-in;
+      background-repeat: no-repeat;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__title .close_btn_wrapper {
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+    background-color: unset;
+    border: unset;
+  }
+
+  &__description > textarea {
+    font-size: 48px;
+    line-height: 72px;
+    border: none;
+    resize: none;
+    width: 100%;
+    box-sizing: border-box;
+    border-left: 16px solid #edff20;
+    padding-left: 20px;
+    margin-top: 40px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
