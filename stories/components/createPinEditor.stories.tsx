@@ -48,6 +48,10 @@ function PinController() {
     }
   }
 
+  function onDeletePin(id: string) {
+
+  }
+
   return (
     <div className="pin_wrapper">
       {/* {
@@ -55,7 +59,7 @@ function PinController() {
       } */}
       {
         Object.values(pinData).map(pinContent => (
-          <PinEditor key={pinContent.id} pinContent={pinContent} onChange={onChange} show={showPin}/>
+          <PinEditor key={pinContent.id} pinContent={pinContent} onChange={onChange}  onDelete={onDeletePin} show={showPin}/>
         ))
       }
 
