@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pin } from '../Pin';
+import { Pin } from '../PinArchive';
 import { IPin, IBoard } from '../Models';
 
 interface Props {

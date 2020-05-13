@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/react';
 import React, { useState } from 'react';
 import '../../src/components-tobedeleted/Button/index.scss';
 import Radio from '../../src/components-tobedeleted/Radio';
-import '../../src/components-tobedeleted/Radio/index.scss';
+// import '../../src/components-tobedeleted/Radio/index.scss';
 import Audio from '../../src/SvgIcons/Audio';
 import Image from '../../src/SvgIcons/Image';
 import OtherMedia from '../../src/SvgIcons/OtherMedia';
@@ -10,32 +10,31 @@ import Text from '../../src/SvgIcons/Text';
 import '../../src/scss/index.scss';
 import './styles.scss';
 
-
 const data2 = [
   {
     value: 'Bistro',
     label: 'Bistro',
-    content: <img src="https://cdn-minio.vrgmetri.com/cdn-web.vrgmetri.com/board-ui/Office.png" />,
+    content: <img src="https://cdn-minio.vrgmetri.com/cdn-web.vrgmetri.com/board-ui/Office.svg" />,
   },
   {
     value: 'Office',
     label: 'Office',
-    content: <img src="https://cdn-minio.vrgmetri.com/cdn-web.vrgmetri.com/board-ui/Meadows.png" />,
+    content: <img src="https://cdn-minio.vrgmetri.com/cdn-web.vrgmetri.com/board-ui/Meadows.svg" />,
   },
   {
     value: 'Bedroom',
     label: 'Bedroom',
-    content: <img src="https://cdn-minio.vrgmetri.com/cdn-web.vrgmetri.com/board-ui/Lakeside.png" />,
+    content: <img src="https://cdn-minio.vrgmetri.com/cdn-web.vrgmetri.com/board-ui/Lakeside.svg" />,
   },
   {
     value: 'Lakeside',
     label: 'Lakeside',
-    content: <img src="https://cdn-minio.vrgmetri.com/cdn-web.vrgmetri.com/board-ui/Bistro.png" />,
+    content: <img src="https://cdn-minio.vrgmetri.com/cdn-web.vrgmetri.com/board-ui/Bistro.svg" />,
   },
   {
     value: 'Meadows',
     label: 'Meadows',
-    content: <img src="https://cdn-minio.vrgmetri.com/cdn-web.vrgmetri.com/board-ui/Bedroom.png" />,
+    content: <img src="https://cdn-minio.vrgmetri.com/cdn-web.vrgmetri.com/board-ui/Bedroom.svg" />,
   },
 ];
 
@@ -59,7 +58,7 @@ const data = [
 ];
 
 function ButtonController() {
-  const [selected, setSelected] = useState('2');
+  const [selected, setSelected] = useState('text');
   const [selected2, setSelected2] = useState('Office');
 
   function onChange(value: string) {

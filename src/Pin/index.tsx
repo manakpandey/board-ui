@@ -1,22 +1,31 @@
-import React from 'react';
-import { IPin } from '../Models';
-
+import React, { useState } from 'react';
+import _ from 'lodash';
 
 interface Props {
-  onChange: (p : IPin) => void,
-  pinProps: IPin,
-  onDelete: (id: number | string) => void
+  data: {
+    id: number,
+    title: string,
+    body: string
+  },
+  onClick: (index: number) => void,
+  index: number
 }
 
-export function Pin({ pinProps, onChange, onDelete }: Props) {
-  function pinContentModified(body: string) {
-    onChange({...pinProps, body});
-  }
+function Pin({data, onClick, index}: Props) {
+  console.log(data);
 
   return (
-    <div className='board_ui__pin'>
-      <textarea className={`board_ui__pin_${pinProps.color ? pinProps.color : 'yellow'}`} onChange={(e: any) => pinContentModified(e.target.value)} value={pinProps.body}></textarea>
-      <span className="closeBtn" onClick={() => onDelete(pinProps.id)}> x </span>
+    <div className="pin_ui" onClick={() => onClick(index)}>
+      <div className="pin_ui__title">
+        {data.title}
+      </div>
+
+      <div className="pin_ui__body">
+        {data.body}
+      </div>
     </div>
-  );
+
+  )
 }
+
+export default Pin;

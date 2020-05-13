@@ -1,0 +1,49 @@
+.createPinEditor_ui {
+  background: #fff;
+  width: 360px;
+  height: 380px;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.16);
+  border-radius: 4px;
+  position: relative;
+  box-sizing: border-box;
+  cursor: url('https://cdn-minio.vrgmetri.com/cdn-web.vrgmetri.com/board-ui/Cursor.svg'), auto;
+
+  & .text-title {
+    color: #ccc;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 20px 0 0 20px;
+    border: unset;
+    border-bottom: 1px solid #ccc;
+    width: 360px;
+    resize: none;
+
+    &::placeholder {
+      color: #ccc;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  & .text-content {
+    color: #ccc;
+    line-height: 21px;
+    border: unset;
+    resize: none;
+    padding: 20px;
+    height: 175px;
+    width: 100%;
+    cursor: url('https://cdn-minio.vrgmetri.com/cdn-web.vrgmetri.com/board-ui/Cursor.svg'), auto;
+
+    &::placeholder {
+      color: #ccc;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
