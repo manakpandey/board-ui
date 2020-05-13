@@ -1,48 +1,53 @@
-import React from 'react';
-import './index.scss';
-import CloseIcon from '../SvgIcons/CloseIcon';
-
-
-interface Data {
-  id: number,
-  title: string,
-  description: string
-}
+import React, { useState, ChangeEvent } from 'react';
+import { IPin } from '../Models';
 
 interface Props {
-  data: Data,
-  onSubmit: (data: Data) => void,
-  closeEditor: () => void
+  pinContent: IPin,
+  onChange: (data: IPin) => void,
+  show: boolean
 }
 
-function PinEditor({data, onSubmit, closeEditor}: Props) {
+function PinEditor({pinContent, onChange, show}: Props) {
 
-  function onSubmitForm(e: any){
-    e.preventDefault();
-    const new_data: Data = {
-      id: data.id,
-      title: e.target.title.value,
-      description: e.target.description.value
-    }
-    onSubmit(new_data);
-    closeEditor();
+  const [pinTitle, setPinTitle] = useState(pinContent.title);
+  const [pinBody, setPinBody] = useState(pinContent.body);
+
+  function onChangeTitle(e: React.ChangeEvent<HTMLTextAreaElement>) {
+    const newTitle = e.currentTarget.value;
+    setPinTitle(newTitle);
+    const update = {
+      id: pinContent.id,
+      title: newTitle,
+      body: pinBody
+    };
+    onChange(update);
+  }
+
+  function onChangeBody(e: React.ChangeEvent<HTMLTextAreaElement>) {
+    const newBody = e.target.value;
+    setPinBody(newBody);
+    const update = {
+      id: pinContent.id,
+      title: pinTitle,
+      body: newBody
+    };
+    onChange(update);
   }
 
   return (
-    <div className="overlay">
-      <div className="pin_editor">
-        <form onSubmit={onSubmitForm}>
+    show? 
+      <div className="board_ui">
+        <div className="pin_editor">
           <div className="pin_editor__title">
-            <textarea defaultValue={data.title} name='title'></textarea>
-            <button type='submit' className="close_btn_wrapper"><CloseIcon /></button>
+            <textarea defaultValue={pinContent.title} name='title' onChange={onChangeTitle}></textarea>
           </div>
 
-          <div className="pin_editor__description">
-            <textarea autoFocus defaultValue={data.description} name='description'></textarea>
+          <div className="pin_editor__body" onChange={() => setPinBody}>
+            <textarea autoFocus defaultValue={pinContent.body} name='body' onChange={onChangeBody}></textarea>
           </div>
-        </form>
-      </div>
-    </div>
+        </div>
+      </div>:
+    null
   )
 }
 

@@ -1,9 +1,15 @@
+// export interface IPin {
+//   id: number | string;
+//   body: string;
+//   color?: string;
+//   pitch?: number;
+//   yaw?: number;
+// }
+
 export interface IPin {
-  id: number | string;
-  body: string;
-  color?: string;
-  pitch?: number;
-  yaw?: number;
+  id: number,
+  title: string,
+  body: string
 }
 
 export interface IBoard {

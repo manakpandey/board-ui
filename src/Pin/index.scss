@@ -1,20 +1,15 @@
-body {
-  margin: 0;
-}
-
 .pin_ui {
-  width: 900px;
-  margin: 0 auto;
+  width: 368px;
+  margin: 0 auto 20px;
   color: #000;
   background-color: #fff;
   font-family: "Montserrat", sans-serif;
   padding-bottom: 10px;
   border: 1px dashed #c8c8c8;
-  margin-bottom: 20px;
 
   &__title {
-    font-size: 60px;
-    line-height: 90px;
+    font-size: 20px;
+    line-height: 30px;
     font-weight: 700;
     background-image: linear-gradient(120deg, #edff20 0%, #edff20 100%);
     background-size: 95% 35px;
@@ -23,9 +18,9 @@ body {
     background-repeat: no-repeat;
   }
 
-  &__description {
-    font-size: 48px;
-    line-height: 72px;
+  &__body {
+    font-size: 14px;
+    line-height: 21px;
     border-left: 16px solid #edff20;
     padding-left: 20px;
     margin-top: 40px;

@@ -1,27 +1,27 @@
 import React, { useState } from 'react';
-import './index.scss';
 import _ from 'lodash';
-import PinEditor from '../PinEditor';
 
 interface Props {
   data: {
     id: number,
     title: string,
-    description: string
+    body: string
   },
   onClick: (index: number) => void,
   index: number
 }
 
 function Pin({data, onClick, index}: Props) {
+  console.log(data);
+
   return (
     <div className="pin_ui" onClick={() => onClick(index)}>
       <div className="pin_ui__title">
         {data.title}
       </div>
 
-      <div className="pin_ui__description">
-        {data.description}
+      <div className="pin_ui__body">
+        {data.body}
       </div>
     </div>
 
