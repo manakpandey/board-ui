@@ -1,10 +1,10 @@
 {
   "name": "@gmetrixr/board-ui",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "main": "lib/index.js",
   "module": "src/index.tsx",
   "types": "lib/index.d.ts",
-  "repository": "https://github.com/gmetrixr/board-ui",
+  "repository": "https://github.comg/gmetrixr/board-ui",
   "author": "GMetri <admin@gmetri.com>",
   "license": "MIT",
   "scripts": {
