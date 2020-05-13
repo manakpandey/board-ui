@@ -8,11 +8,11 @@ import { IPin } from '../Models';
 // import bootstrap
 import 'bootstrap/dist/css/bootstrap-reboot.min.css';
 
-const initialData: IPin[] = [
-  { id: '1', title: 'Send team meeting invites', body: 'Loren Ipsum dolor sit amet. Loren Ipsum dolor sit amet.' },
-  { id: '2', title: 'Team meeting over', body: 'Some dummy text.' },
-  { id: '3', title: 'Title 3', body: 'body 3.' },
-];
+const initialData: { [id: string]: IPin } = {
+  '1': { id: '1', title: 'Send team meeting invites', body: 'Loren Ipsum dolor sit amet. Loren Ipsum dolor sit amet.' },
+  '2': { id: '2', title: 'Team meeting over', body: 'Some dummy text.' },
+  '3': { id: '3', title: 'Title 3', body: 'body 3.' },
+};
 
 function PinController() {
   const [pinData, setPinData] = useState(initialData);
@@ -25,7 +25,7 @@ function PinController() {
   const [showPin, setShowPin] = useState(true);
 
   function onSubmit(data: any) {
-    const updateArry = pinData.map((s) => {
+    const updateArry = Object.values(pinData).map((s) => {
       // Find the item with the matching id
       if (s.id === data.id) {
         // Return a new object
@@ -37,11 +37,15 @@ function PinController() {
       return s;
     });
 
-    setPinData(updateArry);
+    // setPinData(updateArry);
   }
 
   function onChange(update: IPin) {
-    console.log(update);
+    const pin = pinData[update.id];
+    if(pin) {
+      pinData[pin.id] = {...pin, ...update};
+      setPinData({...pinData});
+    }
   }
 
   return (
@@ -50,7 +54,7 @@ function PinController() {
         pinData.map((pin, index) => <Pin key={pin.id} index={index} data={pin} onClick={onClickHandler} />)
       } */}
       {
-        pinData.map(pinContent => (
+        Object.values(pinData).map(pinContent => (
           <PinEditor key={pinContent.id} pinContent={pinContent} onChange={onChange} show={showPin}/>
         ))
       }

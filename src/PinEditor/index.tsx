@@ -45,8 +45,8 @@ function PinEditor({ pinContent, onChange, show }: Props) {
     show ?
       <div id={`pin_${pinContent.id}`}>
         <div className="pin_editor">
-          <textarea ref={titleRef} className="pin_editor__title" defaultValue={pinContent.title} name='title' onChange={onChangeTitle}/>
-          <textarea ref={bodyRef} className="pin_editor__body" autoFocus defaultValue={pinContent.body} name='body' onChange={onChangeBody}/>
+          <textarea ref={titleRef} className="pin_editor__title" value={pinContent.title} name='title' onChange={onChangeTitle}/>
+          <textarea ref={bodyRef} className="pin_editor__body" autoFocus value={pinContent.body} name='body' onChange={onChangeBody}/>
         </div>
       </div> :
       null
