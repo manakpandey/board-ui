@@ -19,12 +19,11 @@ module.exports = function(api) {
       '@babel/plugin-proposal-private-methods',
     ],
     presets: [
-      "@babel/preset-flow",
       ["@babel/preset-env", { modules: 'cjs', targets: { node: 'current' }, }],
       '@babel/preset-react',
     ],
     overrides: [{
-      test: ['./src/**/*.ts'],
+      test: ['./src/**/*.ts', './src/**/*.tsx'],
       presets: [
         "@babel/preset-typescript",
         ["@babel/preset-env", { modules: 'cjs', targets: { node: 'current' }, }],
