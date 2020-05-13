@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import { storiesOf } from '@storybook/react';
-import Pin from '../../src/Pin';
 import PinEditor from '../../src/PinEditor';
 import '../../src/scss/index.scss';
 import '../../src/Pin/index.scss';
 import '../../src/PinEditor/index.scss';
 import { IPin } from '../Models';
+// import bootstrap
+import 'bootstrap/dist/css/bootstrap-reboot.min.css';
 
 const initialData = [
   {id: 1, title: "Send team meeting invites", body: "Loren Ipsum dolor sit amet. Loren Ipsum dolor sit amet."},
@@ -46,13 +47,13 @@ function PinController() {
 
   return (
     <div className="pin_wrapper">
-      {/* { 
+      {/* {
         pinData.map((pin, index) => <Pin key={pin.id} index={index} data={pin} onClick={onClickHandler} />)
       } */}
       {
         pinData.map(pinContent => (
           <PinEditor key={pinContent.id} pinContent={pinContent} onChange={onChange} show={showPin} />
-        )) 
+        ))
       }
 
     </div>
