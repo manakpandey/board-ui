@@ -12,6 +12,7 @@ export interface IBoard {
 }
 
 export interface ChatMessage {
+  id: String,
   content: String,
   timestamp: String,
   userID: number,

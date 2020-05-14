@@ -8,7 +8,7 @@ interface Props {
 
 function ChatInput({saveChatMessage, currentUser}: Props) {
 
-  const [message, setMessage] = useState<ChatMessage>({content: '', timestamp: '', userID: 99, username: ''});
+  const [message, setMessage] = useState<ChatMessage>({id: '', content: '', timestamp: '', userID: 99, username: ''});
 
   function handleSubmit(e: any) {
     e.preventDefault();
@@ -18,6 +18,7 @@ function ChatInput({saveChatMessage, currentUser}: Props) {
   function handleMessage(e: React.ChangeEvent<HTMLInputElement>) {
     const message = e.target.value;
     const update: ChatMessage = {
+      id: '',
       content: message,
       timestamp: '',
       userID: currentUser.userID, 
