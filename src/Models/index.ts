@@ -18,3 +18,11 @@ export interface IBoard {
     [key: string]: IPin
   }
 }
+
+export interface ChatMessage {
+  content: String,
+  timestamp: String,
+  userID: number,
+  username: String
+}
+
