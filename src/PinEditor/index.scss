@@ -1,51 +1,55 @@
-.board_ui {
+.pin_editor {
+  display: inline-block;
+  width: 368px;
+  color: #000;
+  background-color: #fff;
+  font-family: "Montserrat", sans-serif;
+  padding-bottom: 10px;
+  border: 1px solid #c8c8c8;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
 
-  .pin_editor {
-    width: 368px;
-    margin: 0 auto;
-    color: #000;
-    background-color: #fff;
-    font-family: "Montserrat", sans-serif;
-    padding-bottom: 10px;
-    border: 1px dashed #c8c8c8;
-    margin-bottom: 20px;
+  .delete {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+  }
 
-    &__title {
-      position: relative;
+  &__title {
+    height: 40px;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 700;
+    border: none;
+    resize: none;
+    width: 100%;
+    background-image: linear-gradient(120deg, #edff20 0%, #edff20 100%);
+    background-size: 95% 15px;
+    background-position: 0 15px;
+    transition: background-size 0.25s ease-in;
+    background-repeat: no-repeat;
 
-      & textarea {
-        font-size: 20px;
-        line-height: 30px;
-        font-weight: 700;
-        border: none;
-        resize: none;
-        width: 100%;
-        box-sizing: border-box;
-        background-image: linear-gradient(120deg, #edff20 0%, #edff20 100%);
-        background-size: 95% 35px;
-        background-position: 0 88%;
-        transition: background-size 0.25s ease-in;
-        background-repeat: no-repeat;
-
-        &:focus {
-          outline: none;
-        }
-      }
+    &:focus {
+      outline: none;
     }
+  }
 
-    &__body > textarea {
-      font-size: 14px;
-      line-height: 21px;
-      border: none;
-      resize: none;
-      width: 100%;
-      box-sizing: border-box;
-      border-left: 8px solid #edff20;
-      padding-left: 20px;
+  &__body {
+    font-size: 14px;
+    line-height: 21px;
+    border: none;
+    resize: none;
+    width: 100%;
+    box-sizing: border-box;
+    border-left: 8px solid #edff20;
+    padding-left: 8px;
 
-      &:focus {
-        outline: none;
-      }
+    &:focus {
+      outline: none;
     }
   }
 }

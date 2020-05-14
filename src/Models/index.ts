@@ -1,5 +1,5 @@
 export interface IPin {
-  id: number,
+  id: string,
   title: string,
   body: string
 }
@@ -18,4 +18,3 @@ export interface ChatMessage {
   userID: number,
   username: String
 }
-
