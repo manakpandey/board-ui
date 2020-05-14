@@ -1,3 +1,4 @@
+/*
 import { storiesOf } from '@storybook/react';
 import React, { useState } from 'react';
 import { Board } from '../../src/Board';
@@ -45,38 +46,39 @@ function BoardController() {
     },
   });
 
-  function updatePin(p: IPin){
+  function updatePin(p: IPin) {
     board.pins[p.id] = p;
     const new_board = { ...board };
     setBoard(new_board);
   }
 
-  function addPin(){
+  function addPin() {
     const nextIndex = (Object.values(board.pins).length + 1).toString();
     board.pins[nextIndex] = { id: nextIndex, body: '', pitch: 123, yaw: 123 };
     const new_board = { ...board };
     setBoard(new_board);
   }
 
-  function deletePin(id: string | number){
+  function deletePin(id: string | number) {
     console.log('inside delete pin');
     delete board.pins[id.toString()];
     const new_board = { ...board };
     setBoard(new_board);
   }
 
-  return  <React.Fragment>
+  return <React.Fragment>
     <button onClick={addPin}>New Pin</button>
     <button onClick={() => deletePin(1)}>Delete Pin</button>
 
-    <br />
-    <br />
-    <Board updatePin={updatePin} boardJson={board} onDelete={deletePin} />
-  </React.Fragment>
+    <br/>
+    <br/>
+    <Board updatePin={updatePin} boardJson={board} onDelete={deletePin}/>
+  </React.Fragment>;
 }
 
-storiesOf('Board', module).add('Sticky Notes', () => <BoardController />).addParameters({
+storiesOf('Board', module).add('Sticky Notes', () => <BoardController/>).addParameters({
   readme: {
     content: ButtonReadme,
   },
 });
+*/

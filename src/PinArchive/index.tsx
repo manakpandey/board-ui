@@ -15,7 +15,7 @@ export function Pin({ pinProps, onChange, onDelete }: Props) {
 
   return (
     <div className='board_ui__pin'>
-      <textarea className={`board_ui__pin_${pinProps.color ? pinProps.color : 'yellow'}`} onChange={(e: any) => pinContentModified(e.target.value)} value={pinProps.body}></textarea>
+      <textarea className={`board_ui__pin_yellow`} onChange={(e: any) => pinContentModified(e.target.value)} value={pinProps.body}></textarea>
       <span className="closeBtn" onClick={() => onDelete(pinProps.id)}> x </span>
     </div>
   );
