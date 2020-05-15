@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import Chat from '../../src/Chat/Chat';
+import ChatBox from '../../src/Chat/ChatBox';
 import { ChatMessage } from '../../src/Models';
-import './chat.scss';
+import '../../src/Chat/index.scss';
 import '../../src/scss/index.scss';
+import '../../src/scss/_flex_helpers.scss';
+
+import 'bootstrap/dist/css/bootstrap-reboot.min.css';
 
 import ChatCollapsed from '../../src/SvgIcons/ChatCollapsed';
 
@@ -16,65 +19,26 @@ function ChatController() {
   let minutes = date.getMinutes();
 
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([
-    { id: '124338432961296_1', content: 'Lorem Ipsum is simply dummy text of the printing Ipsum is simply Ipsum is simply dummy text of the printing Ipsum is simply text of the printing Ipsum is simply.', timestamp: `${hours}:${minutes}`, userID: 1, username: 'Shankar' },
-    { id: '124338432961296_2', content: 'Lorem Ipsum is simply dummy', timestamp: `${hours}:${minutes}`, userID: 2, username: 'Ratan' },
-    { id: '124338432961296_3', content: 'Lorem Ipsum is simply dummy text of the printing Ipsum is simply dummy text of the printing.', timestamp: `${hours}:${minutes}`, userID: 3, username: 'John' },
-    { id: '124338432961296_4', content: 'Hey there!', timestamp: `${hours}:${minutes}`, userID: 4, username: 'Elton' },
-    { id: '124338432961296_5', content: 'Testing GMetri Chat.', timestamp: `${hours}:${minutes}`, userID: 5, username: 'Arjun' }
+    { id: '124338432961296_1', content: 'Lorem Ipsum is simply dummy text of the printing Ipsum is simply Ipsum is simply dummy text of the printing Ipsum is simply text of the printing Ipsum is simply.', timestamp: 124338432961295, userID: 1, username: 'Shankar' },
+    { id: '124338432961296_2', content: 'Lorem Ipsum is simply dummy', timestamp: 124338432961296, userID: 2, username: 'Ratan' },
+    { id: '124338432961296_3', content: 'Lorem Ipsum is simply dummy text of the printing Ipsum is simply dummy text of the printing.', timestamp: 124338432961297, userID: 3, username: 'John' },
+    { id: '124338432961296_4', content: 'Hey there!', timestamp: 124338432961298, userID: 4, username: 'Elton' },
+    { id: '124338432961296_5', content: 'Testing GMetri Chat.', timestamp: 124338432961299, userID: 5, username: 'Arjun' }
   ]);
 
-  const messages = [
-    {
-      
-      userid: 1,
-      username: "Amit",
-      timestamp: 124338432961296, // Date.now() this is just for representation, this will contain something like: 124338432961296
-      content: "Yolo",
-    },
-    {
-      id: '124338432961296_2', // <timestamp_userid>
-      userid: 2,
-      username: "Jack",
-      timestamp: 124338432961296,
-      content: "Yolo",
-    },
-    {
-      id: '124338432961296_3', // <timestamp_userid>
-      userid: 3,
-      username: "John",
-      timestamp: 124338432961296,
-      content: "Yolo",
-    },
-    {
-      id: '124338432961296_4', // <timestamp_userid>
-      userid: 4,
-      username: "Kristen",
-      timestamp: 124338432961296,
-      content: "Yolo",
-    },
-    {
-      id: '124338432961296_5', // <timestamp_userid>
-      userid: 5,
-      username: "Ram",
-      timestamp: 124338432961296,
-      content: "Jai Shree Ram",
-    },
-    {
-      id: '124338432961296_6', // <timestamp_userid>
-      userid: 6,
-      username: "Amit",
-      timestamp: 124338432961296,
-      content: "Jai Shree Ram aplo bhi!",
-    },
-  ];
-
-
-
-
-  const currentUser: {userID: number, username: String} = {userID: 2, username: 'Ratan'};
+  const currentUser: {userID: number, username: string} = {userID: 2, username: 'Ratan'};
 
   function saveChatMessage(chatMessage: ChatMessage) {
     console.log(chatMessage);
+    chatMessages.push(chatMessage);
+    setChatMessages([...chatMessages]);
+  }
+
+  function addNewChat() {
+    let newChatMessages = [...chatMessages];
+    const dateNow = Date.now();
+    newChatMessages.push({ id: `${dateNow}_2'`, content: 'Lorem Ipsum is simply dummy', timestamp: dateNow, userID: 2, username: 'Ratan' });
+    setChatMessages(newChatMessages);
   }
 
   return (
@@ -83,7 +47,8 @@ function ChatController() {
       {
         showChat ?
         <div className="chat_wrapper">
-          <Chat chatMessages={chatMessages} currentUser={currentUser} saveChatMessage={saveChatMessage} collapseChat={() => setShowChat(false)} />
+          <button onClick={addNewChat}>Add Chat</button>
+          <ChatBox chatMessages={chatMessages} currentUser={currentUser} saveChatMessage={saveChatMessage} collapseChat={() => setShowChat(false)} />
         </div> :
         <div onClick={() => setShowChat(true)}>
           <div className="chat_collapsed__outer_wrapper">

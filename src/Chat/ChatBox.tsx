@@ -1,20 +1,20 @@
 import React from 'react';
 import ChatGroup from './ChatGroup';
 import ChatInput from './ChatInput';
-import { ChatMessage } from '../Models';
+import { ChatMessage, CurrentUser } from '../Models';
 
 import DownArrow from '../SvgIcons/DownArrow';
 
 interface Props {
   chatMessages: ChatMessage[],
-  currentUser: {userID: number, username: String}
+  currentUser: CurrentUser
   saveChatMessage: (message: ChatMessage) => void,
   collapseChat: () => void
 }
 
-function Chat({chatMessages, currentUser, saveChatMessage, collapseChat}: Props) {
+function ChatBox({chatMessages, currentUser, saveChatMessage, collapseChat}: Props) {
   return (
-    <div className="chat">
+    <div className="chat_box">
       <div className="down_arrow_wrapper" onClick={collapseChat}>
         <DownArrow />
       </div>
@@ -25,4 +25,4 @@ function Chat({chatMessages, currentUser, saveChatMessage, collapseChat}: Props)
   )
 }
 
-export default Chat;
+export default ChatBox;

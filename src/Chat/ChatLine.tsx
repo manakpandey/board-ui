@@ -1,27 +1,27 @@
 import React from 'react';
+import { ChatMessage, CurrentUser } from '../Models';
 
 interface Props {
-  color: String,
-  username: String,
-  currentUser: {userID: number, username: String},
-  time: String
-  content: String,
+  message: ChatMessage,
+  currentUser: CurrentUser
 }
 
-function ChatLine({ color, username, currentUser, time, content }: Props) {
+function ChatLine({ message, currentUser}: Props) {
+
+  const {username, content, timestamp} = message;
   
   return (
     <div className={"chatline_wrapper " + (username === currentUser.username ? 'right' : '')}>
       <div className="chatline">
-        <div className={"initial "} style={{ color: `${color}`, border: '2px solid '+`${color}` }}>
-          {username.charAt(0)}
+        <div className={"username"}>
+          {username}
         </div>
 
         <div className="content">
           <p>{content}</p>
         </div>
 
-        <span className="time">{time}</span>
+        <span className="time">{timestamp}</span>
       </div>
     </div>
   )
